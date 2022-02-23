@@ -1,16 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware} from 'redux'
-import thunk from 'redux-thunk';
+import {createStore, applyMiddleware, compose} from 'redux'
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
+import bankAccountReducer from './reducers/bankAccountReducer'
 
 import App from './App';
 
 // set up our store 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+let myStore = createStore(bankAccountReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
+ReactDOM.render(
+  <Provider store={myStore}>
+      <App />
+  </Provider>,
+  document.getElementById('root'));
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

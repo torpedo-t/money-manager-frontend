@@ -1,12 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {fetchBankAccounts} from './actions/fetchBankAccouns'
 
 class App extends React.Component {
   
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/bank_accounts')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  // }
+  componentDidMount() {
+    this.props.fetchBankAccounts({type: 'FETCH_BANK_ACCOUNTS', payload: {name: 'Checking'}})
+  }
+
 
   render() {
     return (
@@ -15,7 +16,12 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
-export default App;
+// const mapStateToProps = (state) => {
+//   return {
+//     bankAccounts: state.bankAccounts
+//   }
+// }
+
+export default connect(null, {fetchBankAccounts})(App);
