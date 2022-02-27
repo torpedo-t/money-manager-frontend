@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
+import{BrowserRouter} from 'react-router-dom'
 import accountReducer from './reducers/accountReducer'
-// import{ BrowserRouter as Router } from 'react-router-dom'
+
 
 import App from './App';
 
@@ -16,9 +17,9 @@ let myStore = createStore(accountReducer, composeEnhancers(applyMiddleware(thunk
 
 ReactDOM.render(
   <Provider store={myStore}>
-    {/* <Router> */}
+    <BrowserRouter>
       <App />
-    {/* </Router> */}
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root'));
 

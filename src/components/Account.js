@@ -1,12 +1,21 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
+import TransactionsContainer from '../containers/TransactionsContainer'
 
 const Account = (props) => {
-    console.log(props)
+
+    let account = props.accounts[props.match.params.id - 1]
+    console.log(account)
+
+
     return (
-        <li>
-            {/* {props.account.name} - {props.account.account_type} - {props.account.starting_balance} */}
-        </li>
+        <div>
+        <h3>
+            {account ? account.name : null} - {account? account.account_type : null} - {account ? account.starting_balance : null} 
+        </h3>
+        <TransactionsContainer account={account}/>
+        </div>
     )
 }
 
-export default Account
+export default Account;
