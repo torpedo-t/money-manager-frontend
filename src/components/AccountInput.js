@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {newBankAccount} from '../actions/newBankAccount'
+import {newAccount} from '../actions/newAccount'
 
-class BankAccountInput extends React.Component {
+class AccountInput extends React.Component {
 
     state = {
         name: '',
@@ -22,14 +22,20 @@ class BankAccountInput extends React.Component {
 
     listenSubmit = (event) => {
         event.preventDefault()
-        this.props.newBankAccount(this.state)
+        this.props.newAccount(this.state)
+        this.setState({
+            name: '',
+            account_type: '', 
+            starting_balance: '', 
+            low_balance_alert: ''
+        })
     }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.listenSubmit}>
-                    <label>Bank Account Name: </label>
+                    <label>Account Name: </label>
                     <input type='text' placeholder='Name' name='name' value={this.state.name} onChange={this.receiveInput}/><br></br>
                     <label>Account Type: </label>
                     <select id="account-type" name="account_type" onChange={this.receiveInput}>
@@ -48,4 +54,4 @@ class BankAccountInput extends React.Component {
     }
 }
 
-export default connect(null, {newBankAccount})(BankAccountInput);
+export default connect(null, {newAccount})(AccountInput);

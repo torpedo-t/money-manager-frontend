@@ -1,6 +1,6 @@
 import React from 'react';
-// import {connect} from 'react-redux'
-import BankAccountsContainer from './containers/BankAccountsContainer'
+import {connect} from 'react-redux'
+import AccountsContainer from './containers/AccountsContainer'
 
 
 class App extends React.Component {
@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <BankAccountsContainer/>
+        <AccountsContainer/>
       </div>
     );
   }

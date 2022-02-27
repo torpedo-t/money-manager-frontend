@@ -1,6 +1,6 @@
-export const newBankAccount = (data) => {
+export const newAccount = (data) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/bank_accounts', {
+        fetch('http://localhost:3000/api/v1/accounts', {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -9,6 +9,6 @@ export const newBankAccount = (data) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(bankAccount => dispatch({type: 'ADD_ACCOUNT', payload: bankAccount}))
+        .then(account => dispatch({type: 'ADD_ACCOUNT', payload: account}))
     }
 }
