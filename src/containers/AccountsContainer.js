@@ -3,8 +3,10 @@ import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom';
 import {fetchAccounts} from '../actions/fetchAccounts'
 import Accounts from '../components/Accounts';
-import AccountInput from '../components/AccountInput'
 import Account from '../components/Account'
+import AccountInput from '../components/AccountInput'
+import Navigation from '../components/Navigation'
+
 
 class AccountsContainer extends React.Component {
 
@@ -15,6 +17,7 @@ class AccountsContainer extends React.Component {
     render() {
         return (
             <div>
+                <Navigation/>
                 <Switch>
                     <Route path='/accounts/new' component={AccountInput} />
                     <Route path='/accounts/:id' render={(routerProps) => <Account {... routerProps} accounts={this.props.accounts} />} />
