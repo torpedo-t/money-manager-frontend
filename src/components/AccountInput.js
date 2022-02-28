@@ -13,7 +13,7 @@ class AccountInput extends React.Component {
 
     receiveInput = (event) => {
         this.setState({
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         })
     }
 
@@ -22,7 +22,7 @@ class AccountInput extends React.Component {
         this.props.newAccount(this.state)
         this.setState({
             name: '',
-            account_type: '', 
+            account_type: '',
             starting_balance: '', 
             low_balance_alert: ''
         })

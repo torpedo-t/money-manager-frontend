@@ -12,7 +12,7 @@ class TransactionInput extends React.Component {
 
     receiveInput = (event) => {
         this.setState({
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         })
     }
 
@@ -31,7 +31,7 @@ class TransactionInput extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <label>Transaction Type: </label>
-                <select id="transaction-type" name="transaction_type" value={this.state.transaction_type} onChange={this.receiveInput}>
+                <select name="transaction_type" value={this.state.transaction_type} onChange={this.receiveInput}>
                     <option>Withdraw</option>
                     <option>Deposit</option>
                 </select><br></br>
