@@ -13,7 +13,7 @@ export const newTransaction = (transaction, accountId) => {
             if (account.error) {
                 alert(account.error)
             } else {
-                dispatch({type: 'ADD_TRANSACTION', payload: account})
+                dispatch({type: 'NEW_TRANSACTION', payload: account})
                 }   
             }
         )

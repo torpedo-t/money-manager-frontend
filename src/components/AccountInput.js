@@ -31,6 +31,8 @@ class AccountInput extends React.Component {
     render() {
         return (
             <div>
+                <center>
+                    <br></br>
                 <form onSubmit={this.listenSubmit}>
                     <label>Account Name: </label>
                     <input type='text' placeholder='Name' name='name' value={this.state.name} onChange={this.receiveInput}/><br></br>
@@ -46,6 +48,7 @@ class AccountInput extends React.Component {
                     <input type='text' placeholder='Low Balance Alert' name='low_balance_alert' value={this.state.low_balance_alert} onChange={this.receiveInput}/><br></br>
                     <input type='submit'/>
                 </form><br></br>
+                </center>
             </div>
         )
     }

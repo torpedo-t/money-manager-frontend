@@ -20,6 +20,7 @@ class AccountsContainer extends React.Component {
                 <Navigation/>
                 <Switch>
                     <Route path='/accounts/new' component={AccountInput} />
+                    {/* changing state properties using the spread operator below */}
                     <Route path='/accounts/:id' render={(routerProps) => <Account {... routerProps} accounts={this.props.accounts} />} />
                     <Route path='/accounts' render={(routerProps) => <Accounts {... routerProps} accounts={this.props.accounts} />} />
                 </Switch>

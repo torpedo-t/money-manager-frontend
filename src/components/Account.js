@@ -1,5 +1,4 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
 import TransactionsContainer from '../containers/TransactionsContainer'
 
 const Account = (props) => {
@@ -11,10 +10,12 @@ const Account = (props) => {
 
     return (
         <div>
-        <h3>
+            <center>
+            <h3>
             {account ? account.name : null} - {account? account.account_type : null} - {account ? account.starting_balance : null} 
-        </h3>
-        <TransactionsContainer account={account}/>
+            </h3>
+            <TransactionsContainer account={account}/>
+            </center>
         </div>
     )
 }
